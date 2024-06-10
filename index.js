@@ -2,7 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const { setGlobalOptions } = require("firebase-functions/v2");
+//const { setGlobalOptions } = require("firebase-functions/v2");
 dotenv.config();
 // const stripe = require("stripe")(meta.env.STRIPE_KEY);
 const stripe = require("stripe")(process.env.STRIPE_KEY);
@@ -10,7 +10,7 @@ const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const app = express();
 
-setGlobalOptions({ maxInstances: 10 });
+//setGlobalOptions({ maxInstances: 10 });
 
 app.use(cors({ origin: true }));
 
@@ -40,8 +40,8 @@ app.post("/payment/create", async (req, res) => {
   }
 });
 
-app.listen(5000,(err)=>{
+app.listen(5009,(err)=>{
     if(err) throw err
-    console.log("Amazon server Running on PORT:5000, http://localhost:5000 ")
+    console.log("Amazon server Running on PORT:5009, http://localhost:5009 ")
 })
 
